@@ -1,0 +1,77 @@
+@font-face {
+    font-family: signature;
+    src: url(../../public/fonts/England.ttf);
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #111;
+}
+
+.company-header {
+    width: 90%;
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    border-radius: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    position: relative;
+    text-align: center;
+}
+.header-logo {
+    filter: drop-shadow(0 0 2px rgb(71, 103, 172));
+    opacity: 0.75;
+    width: 150px;
+    max-width: 75vw;
+}
+.company-header > h1 {
+    margin-top: 1rem;
+    color: #e6e6e6;
+    font-size: 3.5rem;
+    margin-bottom: 2rem;
+    font-family: signature;
+    text-shadow: 0 0 10px rgb(71, 103, 172);
+}
+.company-header > h5 {
+    font-family: signature;
+    font-weight: lighter;
+    color: rgb(71, 103, 172);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.image-gallery {
+    width: 90%;
+    max-width: 90vw;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem;
+}
+.image-gallery img {
+    width: 500px;
+    max-width: 90vw;
+    max-height: 90vh;
+    border-radius: 1rem;
+    opacity: 0.5;
+    box-shadow: 0 0 14px rgb(71, 103, 172);
+    transition: ease-in-out 250ms;
+}
+.image-gallery img:hover {
+    opacity: 1;
+}
