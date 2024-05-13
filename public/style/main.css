@@ -2,6 +2,10 @@
     font-family: signature;
     src: url(../../public/fonts/England.ttf);
 }
+@font-face {
+    font-family: title;
+    src: url(../../public/fonts/earthorbitertitle.ttf);
+}
 
 
 
@@ -17,49 +21,79 @@ body {
 }
 
 .company-header {
-    width: 90%;
+    width: 100%;
+    height: 225px;
     margin-inline: auto;
     margin-top: 7.5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 12rem;
     padding: 1rem;
-    border-radius: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
     position: relative;
+    box-shadow: inset 0 0 100px #0000009c, inset 0 0 20px #000000b9, 0 0 30px rgba(71, 103, 172, 0.486);
     text-align: center;
+    border-top: solid 3px rgb(71, 103, 172);
+    border-bottom: solid 3px rgb(71, 103, 172);
+}
+.company-name {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+}
+.header-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    z-index: -5;
+    opacity: 0.25;
+    background-image: url('../media/images/2d/1.jpg');
+    background-size: cover;
+    background-position: center;
+}
+.header-bg-overlay {
+    position: absolute;
+    z-index: -2;
+    backdrop-filter: blur(2px);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 .header-logo {
-    filter: drop-shadow(0 0 8px rgb(71, 103, 172));
-    opacity: 0.25;
-    opacity: 1;
-    border: solid 1px rgba(71, 103, 172, 0.527);
-    box-shadow: inset 0 0 6px rgba(71, 103, 172, 0.534), 0 15px 10px #000;
-    backdrop-filter: blur(8px);
+    filter: drop-shadow(0 0 12px rgb(71, 103, 172));
+    opacity: 0.45;
+    z-index: -8;
     position: fixed;
     top: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 0.75rem;
     width: 85px;
     max-width: 75vw;
 }
-.company-header > h1 {
-    margin-top: 1rem;
+.company-header > .company-name > h1 {
+    margin-top: 2rem;
     color: #e6e6e6;
-    font-size: 3.5rem;
-    margin-bottom: 2rem;
+    font-size: 3.75rem;
+    margin-bottom: 2.75rem;
     font-family: signature;
-    text-shadow: 0 0 10px rgb(71, 103, 172);
+    text-shadow: 0 12px 3px rgba(0, 0, 0, 0.678);
 }
-.company-header > h5 {
-    font-family: signature;
+.company-header > .company-name > h5 {
+    font-family: title;
     font-weight: lighter;
     color: rgb(71, 103, 172);
-    font-size: 2rem;
+    font-size: 0.8rem;
+    font-weight: lighter;
     margin-bottom: 2rem;
-    text-shadow: 0 0 10px rgb(255, 255, 255);
+    text-shadow: 0 6px 2px rgb(0, 0, 0), 0 0 1px #ffffff8f;
 }
 
 .image-gallery {
@@ -72,11 +106,11 @@ body {
     align-items: center;
     justify-content: space-evenly;
     gap: 2rem;
+    margin-bottom: 12rem;
 }
 .image-gallery img {
-    width: 500px;
     max-width: 90vw;
-    max-height: 90vh;
+    max-height: 80vh;
     border-radius: 1rem;
     opacity: 0.5;
     box-shadow: 0 0 14px rgb(71, 103, 172);
