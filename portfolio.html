@@ -10,20 +10,46 @@
     <script src="./public/logic/main.js"></script>
 </head>
 <body>
-    <h1>Portfolio</h1>
-
-    <div class="image-gallery">
-        <img src="./public/media/images/2d/1.jpg" alt="">
-        <img src="./public/media/images/2d/2.jpg" alt="">
-        <img src="./public/media/images/2d/3.jpg" alt="">
-        <img src="./public/media/images/2d/4.jpg" alt="">
-        <img src="./public/media/images/2d/5.jpg" alt="">
-        <img src="./public/media/images/2d/6.png" alt="">
-        <img src="./public/media/images/2d/7.jpg" alt="">
-        <img src="./public/media/images/2d/8.jpg" alt="">
-        <img src="./public/media/images/360/1.png" alt="">
-        <img src="./public/media/images/360/2.png" alt="">
+    <div class="company-logo">
+        <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
     </div>
+    <div class="company-header">
+        <div class="header-bg-overlay"></div>
+        <div class="header-bg"></div>
+        <div class="company-name">
+            <h1>Portfolio</h1>
+            <h5>A Range of Final Products</h5>
+        </div>
+    </div>
+
+
+    <section class="search">
+        <img src="./public/media/images/system/bp-bg_2.jpg" alt="Blueprints Background">
+        <div class="content">
+            <h5>Search Photos</h5>
+            <div class="search-box">
+                <img src="./public/media/images/system/search.png" alt="Search Icon">
+                <input type="text" id="imageSearchBox" placeholder="Search Images" spellcheck="false">
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <ul class="images">
+            <li class="card"><img src="./public/media/images/2d/1.jpg" alt="1.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/2.jpg" alt="2.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/3.jpg" alt="3.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/4.jpg" alt="4.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/5.jpg" alt="5.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/6.png" alt="6.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/7.jpg" alt="7.jpg"></li>
+            <li class="card"><img src="./public/media/images/2d/8.jpg" alt="8.jpg"></li>
+        </ul>
+        <button class="load-more">Load More</button>
+    </section>
+
+
+
 
 
         <div id="mainMenuContainer">
@@ -40,5 +66,28 @@
             </ul>
         </div>
     </div>
+    <div id="fullscreenToggle">
+        <img id="fullscreenBtn" src="./public/media/images/system/view-expand.png" alt="Fullscreen Icon">
+        <img id="exitFullscreenBtn" class="hidden" src="./public/media/images/system/view-collapse.png" alt="Exit Fullscreen Icon">
+    </div>
+    <script>
+        const
+            fullscreenToggle = document.getElementById('fullscreenToggle'),
+            fullscreenBtn = document.getElementById('fullscreenBtn'),
+            exitFullscreenBtn = document.getElementById('exitFullscreenBtn')
+
+        fullscreenBtn.addEventListener('click', e => {
+            document.documentElement.requestFullscreen().catch((e) => {
+                console.log(e)
+            })
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+        exitFullscreenBtn.addEventListener('click', e => {
+            document.exitFullscreen()
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+    </script>
 </body>
 </html>
