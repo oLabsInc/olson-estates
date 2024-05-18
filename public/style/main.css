@@ -330,3 +330,15 @@ h1 {
     padding: 0.5rem;
     cursor: pointer;
 }
+
+
+.phone-number {
+    font-size: 1.5rem;
+    font-weight: 100;
+    font-family: title;
+    text-align: center;
+}
+.phone-number a {
+    color: rgb(71, 103, 172);
+    text-decoration: none;
+}
