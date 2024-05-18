@@ -37,6 +37,7 @@
         <div id="mainMenu">
             <ul>
                 <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item"><a href="vr-home.html">VR</a></li>
                 <li class="menu-item"><a href="services.html">Services</a></li>
                 <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
                 <li class="menu-item"><a href="contact.html">Contact</a></li>
@@ -47,9 +48,28 @@
         </div>
     </div>
 
-
+    <div id="fullscreenToggle">
+        <img id="fullscreenBtn" src="./public/media/images/system/view-expand.png" alt="Fullscreen Icon">
+        <img id="exitFullscreenBtn" class="hidden" src="./public/media/images/system/view-collapse.png" alt="Exit Fullscreen Icon">
+    </div>
     <script>
-        
+        const
+            fullscreenToggle = document.getElementById('fullscreenToggle'),
+            fullscreenBtn = document.getElementById('fullscreenBtn'),
+            exitFullscreenBtn = document.getElementById('exitFullscreenBtn')
+
+        fullscreenBtn.addEventListener('click', e => {
+            document.documentElement.requestFullscreen().catch((e) => {
+                console.log(e)
+            })
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+        exitFullscreenBtn.addEventListener('click', e => {
+            document.exitFullscreen()
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
     </script>
 </body>
 </html>
