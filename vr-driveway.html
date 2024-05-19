@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olson Estates | VR Home</title>
+
+    <link rel="icon" type="image/x-icon" href="./public/media/images/system/oe_logo_1a1a1a.png">
+    
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="./public/style/main.css">
+    <script src="./public/logic/main.js"></script>
+
+    <style>
+        .a-loader-title {
+            color: #4767ac;
+        }
+
+        .company-header {
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+        <div class="company-logo">
+            <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
+        </div>
+
+    <div class="company-header">
+        <div class="header-bg-overlay"></div>
+        <div class="header-bg"></div>
+        <div class="company-name">
+            <h1>Virtual Reality</h1>
+            <h5>Our Projects in VR</h5>
+        </div>
+    </div>
+
+        <!-- A-FRAME START -->
+
+    <a-scene loading-screen="dotsColor: #4767ac; backgroundColor: #000">
+        <a-assets>
+            <video id="video1" src="./public/media/videos/1.mp4" autoplay loop></video>
+            <img id="oeLogo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="OE Logo">
+            <a-asset-item id="gate" src="./public/media/models/the_mansion_gate_2.glb"></a-asset-item>
+            <a-asset-item id="bugatti" src="./public/media/models/bugatti_chiron_basic_edition.glb"></a-asset-item>
+            <a-asset-item id="ghost" src="./public/media/models/rolls_royce_ghost.glb"></a-asset-item>
+        </a-assets>
+
+        <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="0 4 0" rotation="0 -50 0"
+            scale="1 2.5 1" material="opacity: 0.25;"></a-curvedimage>
+
+
+        <a-gltf-model src="#gate" position="0 0 -10" rotation="0 0 0" scale="1 1 0.75"></a-gltf-model>
+        <a-gltf-model src="#bugatti" position="-2.3 0 -5.1" rotation="0 60 0" ></a-gltf-model>
+        <a-gltf-model src="#ghost" position="3.4 0.861 -6.7" rotation="0 -60 0" scale="3 3 3"></a-gltf-model>
+        <a-plane position="0 0 0" color="#222" width="200" height="200" rotation="-90 0 0"></a-plane>
+        <!-- <a-sky color="#ECECEC" material="src: ./public/media/images/360/3.jpg"></a-sky> -->
+        <a-sky color="#284252"></a-sky>
+    </a-scene>
+
+
+
+
+        <!-- A-FRAME END -->
+    <div class="company-logo">
+        <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
+    </div>
+
+
+
+    <div id="mainMenuContainer">
+        <div id="mainMenuButtons">
+            <div id="mainMenuOpen"></div>
+            <div id="mainMenuClose"></div>
+        </div>
+        <div id="mainMenu">
+            <ul>
+                <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item"><a href="vr-home.html">VR</a></li>
+                <li class="menu-item"><a href="vr-gallery.html">VR Gallery</a></li>
+                <li class="menu-item"><a href="services.html">Services</a></li>
+                <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
+                <li class="menu-item"><a href="contact.html">Contact</a></li>
+                <li class="menu-item"><a href="help.html">Help</a></li>
+                <li class="menu-item"><a href="blog.html">Blog</a></li>
+                <li class="menu-item"><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div id="fullscreenToggle">
+        <img id="fullscreenBtn" src="./public/media/images/system/view-expand.png" alt="Fullscreen Icon">
+        <img id="exitFullscreenBtn" class="hidden" src="./public/media/images/system/view-collapse.png" alt="Exit Fullscreen Icon">
+    </div>
+    <script>
+        const
+            fullscreenToggle = document.getElementById('fullscreenToggle'),
+            fullscreenBtn = document.getElementById('fullscreenBtn'),
+            exitFullscreenBtn = document.getElementById('exitFullscreenBtn')
+
+        fullscreenBtn.addEventListener('click', e => {
+            document.documentElement.requestFullscreen().catch((e) => {
+                console.log(e)
+            })
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+        exitFullscreenBtn.addEventListener('click', e => {
+            document.exitFullscreen()
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+    </script>
+</body>
+</html>
