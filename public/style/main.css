@@ -106,7 +106,7 @@ body {
     border-radius: 0.5rem;
     backdrop-filter: blur(6px);
     background-color: #00000060;
-    max-width: 75vw;
+    max-width: 50px;
     box-shadow: 0 30px 20px #00000069;
 
 }
