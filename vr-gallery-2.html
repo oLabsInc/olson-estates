@@ -41,26 +41,12 @@
     <a-scene loading-screen="dotsColor: #4767ac; backgroundColor: #000">
         <a-assets>
             <video id="video1" src="./public/media/videos/1.mp4" autoplay loop></video>
-            <img id="oeLogo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="OE Logo">
-            <a-asset-item id="gate" src="./public/media/models/the_mansion_gate.glb"></a-asset-item>
-            <a-asset-item id="buildings1" src="./public/media/models/game_ready_city_buildings.glb"></a-asset-item>
-            <a-asset-item id="building3" src="./public/media/models/game_ready_building_3.glb"></a-asset-item>
-            <a-asset-item id="porsche" src="./public/media/models/porsche_911_gt3.glb"></a-asset-item>
-            <a-asset-item id="bugatti" src="./public/media/models/bugatti_chiron_basic_edition.glb"></a-asset-item>
+            <a-asset-item id="gallery" src="./public/media/models/art_gallery_hallway_2.glb"></a-asset-item>
         </a-assets>
 
-        <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="0 4 0" rotation="0 -50 0"
-            scale="1 2.5 1" material="opacity: 0.25;"></a-curvedimage>
-
-
-        <a-gltf-model src="#gate" position="-14.310 0 -8.370" rotation="0 0 0" ></a-gltf-model>
-        <a-gltf-model src="#porsche" position="-7.5 0 -4.6" rotation="0 45 0" ></a-gltf-model>
-        <a-gltf-model src="#bugatti" position="-2.3 0 -5.1" rotation="0 60 0" ></a-gltf-model>
-        <a-gltf-model src="#buildings1" position="-63.9 9.8 -68.82" rotation="0 180 0" scale="20 20 20"></a-gltf-model>
-        <a-gltf-model src="#building3" position="-114 5.79 -8" rotation="0 0 0" scale="150 150 150"></a-gltf-model>
-        <a-plane position="0 -1.5 0" color="#222" width="200" height="200" rotation="-90 0 0"></a-plane>
+        <a-gltf-model src="#gallery" position="-7 0 0" rotation="0 -90 0" ></a-gltf-model>
         <!-- <a-sky color="#ECECEC" material="src: ./public/media/images/360/3.jpg"></a-sky> -->
-        <a-sky color="lightskyblue"></a-sky>
+        <a-sky color="#000"></a-sky>
     </a-scene>
 
 
@@ -82,7 +68,7 @@
             <ul>
                 <li class="menu-item"><a href="index.html">Home</a></li>
                 <li class="menu-item"><a href="vr-home.html">VR</a></li>
-                <li class="menu-item"><a href="vr-gallery.html">VR Gallery</a></li>
+                <li class="menu-item"><a href="vr-gallery.html">VR</a></li>
                 <li class="menu-item"><a href="services.html">Services</a></li>
                 <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
                 <li class="menu-item"><a href="contact.html">Contact</a></li>
