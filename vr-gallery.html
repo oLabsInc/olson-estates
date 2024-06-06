@@ -19,6 +19,36 @@
         .company-header {
             user-select: none;
             pointer-events: none;
+            position: fixed;
+            bottom: 20vh;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: transparent;
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: none;
+            box-shadow: none;
+            opacity: 1;
+            transition:opacity 500ms;
+        }
+        .company-header > .company-name > h1 {
+            background-color: #00000049;
+            box-shadow: inset 0 0 20px rgba(71, 103, 172, 0.5);
+            backdrop-filter: blur(8px);
+            max-width: 80vw;
+            width: calc(400px + 4rem);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-shadow: 0 0px 3px rgba(0, 0, 0, 1);
+            margin-inline: auto;
+
+            font-size: 2.25rem;
+        }
+        .company-header h5 {
+            padding: 1rem;
         }
     </style>
 </head>
@@ -27,9 +57,7 @@
             <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
         </div>
 
-    <div class="company-header">
-        <div class="header-bg-overlay"></div>
-        <div class="header-bg"></div>
+    <div id="pageHeader" class="company-header">
         <div class="company-name">
             <h1>Virtual Reality</h1>
             <h5>Our Projects in VR</h5>
@@ -104,6 +132,19 @@
             fullscreenBtn.classList.toggle('hidden')
             exitFullscreenBtn.classList.toggle('hidden')
         })
+    </script>
+
+    <script>
+    window.onload = function () {
+        fadeInOut(1000, 9000);
+    }
+
+    function fadeInOut(start, total) {
+        setTimeout(function () {
+            document.getElementById('pageHeader').className = 'fade-out';
+            console.log('PAGE LOADED')
+        }, 5000);
+    }
     </script>
 </body>
 </html>

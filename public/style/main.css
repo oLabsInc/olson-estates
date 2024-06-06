@@ -26,6 +26,9 @@ body {
 .hidden {
     display: none;
 }
+.fade-out {
+    opacity: 0;
+}
 #fullscreenToggle {
     position: fixed;
     top: 10px;
