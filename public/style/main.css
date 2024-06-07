@@ -27,7 +27,8 @@ body {
     display: none;
 }
 .fade-out {
-    opacity: 0;
+    display: none;
+    transition: ease-in-out 1000ms;
 }
 #fullscreenToggle {
     position: fixed;
@@ -38,6 +39,7 @@ body {
     background-color: rgba(0, 0, 0, 0.205);
     border-radius: 0.5rem;
     backdrop-filter: blur(4px);
+    /* border: solid 1px #4767ac; */
     border: solid 1px rgb(71, 103, 172);
     display: flex;
     align-items: center;
@@ -49,6 +51,9 @@ body {
     width: 30px;
     height: 30px;
     filter: drop-shadow(0 0 2px #000) grayscale(100%);
+}
+#pageHeader {
+    
 }
 .company-header {
     width: 100%;
@@ -66,6 +71,7 @@ body {
     text-align: center;
     border-top: solid 1px rgb(71, 103, 172);
     border-bottom: solid 1px rgb(71, 103, 172);
+    transition: ease-in-out 1000ms;
 }
 .company-name {
     position: absolute;
@@ -110,7 +116,7 @@ body {
     backdrop-filter: blur(6px);
     background-color: #00000060;
     max-width: 50px;
-    box-shadow: 0 30px 8px #00000013;
+    box-shadow: 0 30px 40px #0000003b;
 
 }
 .header-logo {
