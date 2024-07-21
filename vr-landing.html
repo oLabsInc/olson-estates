@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Olson Estates | VR Home</title>
+
+    <link rel="icon" type="image/x-icon" href="./public/media/images/system/oe_logo_1a1a1a.png">
+    
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <link rel="stylesheet" href="./public/style/main.css">
+    <script src="./public/logic/main.js"></script>
+
+    <style>
+        .a-loader-title {
+            color: #4767ac;
+        }
+
+        .company-header {
+            user-select: none;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+        <div class="company-logo">
+            <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
+        </div>
+
+    <div id="pageHeader" class="company-header">
+        <div class="company-name">
+            <h1>Virtual Reality</h1>
+            <h5>Our Projects in VR</h5>
+        </div>
+    </div>
+
+        <!-- A-FRAME START -->
+
+    <a-scene loading-screen="dotsColor: #4767ac; backgroundColor: #000">
+        <a-assets>
+            <a-asset-item id="logo" src="./public/media/models/OE_LOGO_1a1a1a.glb"></a-asset-item>
+            <a-asset-item id="mascot" src="./public/media/models/oe_mascot.glb"></a-asset-item>
+            <audio id="lacrimosa" src="./public/media/audio/background/lacrimosa_1.mp3" preload="auto" autoplay loop></audio>
+            <img id="equiImg1" src="./public/media/images/360/4.jpg" alt="Basement 360 Image">
+        </a-assets>
+
+<!-- <a-entity light="type: ambient; color: #555"></a-entity> -->
+
+
+        <!-- <a-gltf-model src="#mascot" scale="1 1 1" rotation="0 55 0" position="0 -2 -10"></a-gltf-model> -->
+        <a-gltf-model src="#logo" scale="0.075 0.075 0.075" rotation="0 0 0" position="0 2 -10"></a-gltf-model>
+        <a-plane color="#111" material="" geometry="primitive: circle; radius: 2.25" position="0 1.93395 -10.22"></a-plane>
+        <!-- <a-entity sound="src: #lacrimosa; loop: true;"></a-entity> -->
+
+        <a-sky color="#111"></a-sky>
+    </a-scene>
+
+
+
+
+        <!-- A-FRAME END -->
+    <div class="company-logo">
+        <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
+    </div>
+
+
+
+    <div id="mainMenuContainer">
+        <div id="mainMenuButtons">
+            <div id="mainMenuOpen"></div>
+            <div id="mainMenuClose"></div>
+        </div>
+        <div id="mainMenu">
+            <ul>
+                <li class="menu-item"><a href="index.html">Home</a></li>
+                <li class="menu-item"><a href="vr-home.html">VR</a></li>
+                <li class="menu-item"><a href="vr-gallery.html">VR</a></li>
+                <li class="menu-item"><a href="services.html">Services</a></li>
+                <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
+                <li class="menu-item"><a href="contact.html">Contact</a></li>
+                <li class="menu-item"><a href="help.html">Help</a></li>
+                <li class="menu-item"><a href="blog.html">Blog</a></li>
+                <li class="menu-item"><a href="sitemap.html">Sitemap</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div id="fullscreenToggle">
+        <img id="fullscreenBtn" src="./public/media/images/system/view-expand.png" alt="Fullscreen Icon">
+        <img id="exitFullscreenBtn" class="hidden" src="./public/media/images/system/view-collapse.png" alt="Exit Fullscreen Icon">
+    </div>
+    <script>
+        const
+            fullscreenToggle = document.getElementById('fullscreenToggle'),
+            fullscreenBtn = document.getElementById('fullscreenBtn'),
+            exitFullscreenBtn = document.getElementById('exitFullscreenBtn')
+
+        fullscreenBtn.addEventListener('click', e => {
+            document.documentElement.requestFullscreen().catch((e) => {
+                console.log(e)
+            })
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+        exitFullscreenBtn.addEventListener('click', e => {
+            document.exitFullscreen()
+            fullscreenBtn.classList.toggle('hidden')
+            exitFullscreenBtn.classList.toggle('hidden')
+        })
+    </script>
+    <script>
+        window.onload = function () {
+            fadeInOut(1000, 9000);
+        }
+
+        function fadeInOut(start, total) {
+            setTimeout(function () {
+                document.getElementById('pageHeader').className = 'fade-out'
+                console.log('PAGE LOADED')
+            }, 5000);
+        }
+    </script>
+</body>
+</html>
