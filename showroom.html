@@ -40,7 +40,7 @@
             backdrop-filter: blur(6px);
             background-color: #0000001f;
             padding: 0.5rem;
-            box-shadow: 0 30px 40px #0000003b, 0 -30px 40px #0000003b ;
+            box-shadow: 0 30px 40px #0000003b, 0 -30px 40px #0000003b;
         }
         .company-logo img {
             filter: drop-shadow(0 0 4px rgb(71, 103, 172));
@@ -77,20 +77,54 @@
         <a-assets>
             <video id="video1" src="./public/media/videos/1.mp4" autoplay loop></video>
             <img id="oeLogo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="OE Logo">
-            <a-asset-item id="gate" src="./public/media/models/the_mansion_gate_2.glb"></a-asset-item>
-            <a-asset-item id="bugatti" src="./public/media/models/bugatti_chiron_basic_edition.glb"></a-asset-item>
-            <a-asset-item id="ghost" src="./public/media/models/rolls_royce_ghost.glb"></a-asset-item>
+            <a-asset-item id="gallery" src="./public/media/models/vr_room_-_vr_art_gallery.glb"></a-asset-item>
         </a-assets>
 
-        <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="0 4 0" rotation="0 -50 0"
-            scale="1 2.5 1" material="opacity: 0.25;"></a-curvedimage>
+        <a-gltf-model src="#gallery" position="0 0 -10" rotation="0 0 0"></a-gltf-model>
 
 
-        <a-gltf-model src="#gate" position="0 0 -10" rotation="0 0 0" scale="1 1 0.75"></a-gltf-model>
-        <a-gltf-model src="#bugatti" position="-2.3 0 -5.1" rotation="0 60 0" ></a-gltf-model>
-        <a-gltf-model src="#ghost" position="3.4 0.861 -6.7" rotation="0 -60 0" scale="3 3 3"></a-gltf-model>
-        <a-plane position="0 0 0" color="#222" width="200" height="200" rotation="-90 0 0"></a-plane>
-        <!-- <a-sky color="#ECECEC" material="src: ./public/media/images/360/3.jpg"></a-sky> -->
+        <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="1.0878 1.894 6.49795"
+            rotation="0 -42.1290137181743 0" scale="0.5 0.5 0.5" material="opacity: 0.25"
+            geometry="radius: 4.52; thetaLength: 72"></a-curvedimage>
+
+        <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="0.9712 1.894 -4.03181"
+            rotation="0 150.99557845539175 0" scale="0.5 0.5 0.5" material="opacity: 0.25"
+            geometry="radius: 4.52; thetaLength: 72"></a-curvedimage>
+
+
+        <!-- Images -->
+
+
+
+        <a-image src="./public/media/images/sketches/1.jpg" position="-3.95938 2.14973 -5" width="3" height="1.5"
+            material="color: #616161" geometry="" rotation="0 45 0"></a-image>
+            
+        <a-image src="./public/media/images/sketches/8.jpg" position="-5.11 2.14973 -1.5" width="4" height="2.5"
+            material="color: #616161" geometry="" rotation="0 90 0"></a-image>
+            
+        <a-image src="./public/media/images/sketches/3.jpg" position="-5.11 2.14973 3.2" width="4" height="2.5"
+            material="color: #616161" geometry="" rotation="0 90 0"></a-image>
+            
+        <a-image src="./public/media/images/sketches/5.jpg" position="6.6 2.14973 -1.5" width="4" height="2.5"
+            material="color: #616161" geometry="" rotation="0 90 0"></a-image>
+            
+        <a-image src="./public/media/images/sketches/6.jpg" position="6.6 2.14973 3.2" width="4" height="2.5"
+            material="color: #616161" geometry="" rotation="0 90 0"></a-image>
+            
+        <a-image src="./public/media/images/sketches/4.jpg" position="-3.95938 2.14973 6.842" width="3" height="1.5"
+            material="color: #616161" geometry="" rotation="0 -45 0"></a-image>
+
+
+        <a-image src="./public/media/images/sketches/10.jpg" position="5.468 2.14973 -5" width="3" height="1.5"
+            material="color: #616161" geometry="" rotation="0 -45 0"></a-image>
+
+
+        <a-image src="./public/media/images/sketches/11.jpg" position="5.43 2.14973 6.76" width="3" height="1.5"
+            material="color: #616161" geometry="" rotation="0 45 0"></a-image>
+
+
+
+        <a-light color="aqua" position="0 3 0" rotation="0 180 0"></a-light>
         <a-sky color="#284252"></a-sky>
     </a-scene>
 
@@ -113,7 +147,7 @@
             <ul>
                 <li class="menu-item"><a href="index.html">Home</a></li>
                 <li class="menu-item"><a href="vr-home.html">VR</a></li>
-                <li class="menu-item"><a href="vr-gallery.html">VR Gallery</a></li>
+                <li class="menu-item-wide"><a href="vr-gallery.html">VR Gallery</a></li>
                 <li class="menu-item"><a href="services.html">Services</a></li>
                 <li class="menu-item"><a href="portfolio.html">Portfolio</a></li>
                 <li class="menu-item"><a href="contact.html">Contact</a></li>
