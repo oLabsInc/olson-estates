@@ -110,7 +110,6 @@
         </div>
     </div>
     
-    <div id="listOfDevices"></div>
 
 
     <div class="company-logo">
@@ -170,8 +169,7 @@
     <script>
         const
             leftVid = document.getElementById('prLeftVid'),
-            rightVid = document.getElementById('prRightVid'),
-            listOfDevices = document.getElementById('listOfDevices')
+            rightVid = document.getElementById('prRightVid')
 
         navigator.mediaDevices.getUserMedia({video: {facingMode: { exact: "environment" }}}).then((stream) => {
             leftVid.srcObject = stream
@@ -181,24 +179,24 @@
         })
 
 
-        if (!navigator.mediaDevices?.enumerateDevices) {
-                console.log("enumerateDevices() not supported.");
-            } else {
-                // List cameras and microphones.
-                navigator.mediaDevices
-                    .enumerateDevices()
-                    .then((devices) => {
-                        devices.forEach((device) => {
-                            const p = document.createElement('p')
-                            p.innerText = `${device.kind} - ${device.label}`
-                            listOfDevices.appendChild(p)
-                            console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-                        });
-                    })
-                    .catch((err) => {
-                        console.error(`${err.name}: ${err.message}`);
-                    });
-            }
+        // if (!navigator.mediaDevices?.enumerateDevices) {
+        //         console.log("enumerateDevices() not supported.");
+        //     } else {
+        //         // List cameras and microphones.
+        //         navigator.mediaDevices
+        //             .enumerateDevices()
+        //             .then((devices) => {
+        //                 devices.forEach((device) => {
+        //                     const p = document.createElement('p')
+        //                     p.innerText = `${device.kind} - ${device.label}`
+        //                     listOfDevices.appendChild(p)
+        //                     console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
+        //                 });
+        //             })
+        //             .catch((err) => {
+        //                 console.error(`${err.name}: ${err.message}`);
+        //             });
+        //     }
     </script>
 </body>
 </html>
