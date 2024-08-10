@@ -110,6 +110,9 @@
         </div>
     </div>
     
+    <div id="listOfDevices"></div>
+
+
     <div class="company-logo">
         <img class="header-logo" src="./public/media/images/system/oe_logo_1a1a1a.png" alt="Olson Estates Logo">
     </div>
@@ -167,7 +170,8 @@
     <script>
         const
             leftVid = document.getElementById('prLeftVid'),
-            rightVid = document.getElementById('prRightVid')
+            rightVid = document.getElementById('prRightVid'),
+            listOfDevices = document.getElementById('listOfDevices')
 
         navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
             leftVid.srcObject = stream
@@ -185,6 +189,9 @@
                     .enumerateDevices()
                     .then((devices) => {
                         devices.forEach((device) => {
+                            const p = document.createElement('p')
+                            p.innerText = `${device.kind} - ${device.label}`
+                            listOfDevices.appendChild(p)
                             console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
                         });
                     })
