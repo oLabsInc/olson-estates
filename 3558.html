@@ -79,8 +79,10 @@
             <a-asset-item id="house" src="./public/media/models/3558_test_1a1a1a.glb"></a-asset-item>
         </a-assets>
 
-        <!-- <a-gltf-model src="#house" position="0 0 -15" rotation="0 0 0"></a-gltf-model> -->
+        <a-gltf-model src="#house" position="0 0 -15" rotation="0 0 0"></a-gltf-model>
 
+        <a-entity geometry="primitive: plane" rotation="270 0 0" position="" scale="100 100 1"
+            material="color: #185928"></a-entity>
 
         <a-curvedimage src="#oeLogo" height="3.0" radius="5.7" theta-length="72" position="1.0878 1.894 6.49795"
             rotation="0 -42.1290137181743 0" scale="0.5 0.5 0.5" material="opacity: 0.25"
@@ -95,21 +97,10 @@
 
 
         <!-- <a-light color="aqua" position="0 3 0" rotation="0 180 0"></a-light> -->
-        <!-- <a-sky color="#284252"></a-sky> -->
+        <a-sky color="#276890"></a-sky>
     </a-scene>
 
         <!-- A-FRAME END -->
-
-
-    <div id="physicalReality">
-        <div id="prLeft">
-            <video class="pr-vid" id="prLeftVid" muted autoplay></video>
-        </div>
-        <div id="prRight">
-            <video class="pr-vid" id="prRightVid" muted autoplay></video>
-        </div>
-    </div>
-    
 
 
     <div class="company-logo">
@@ -165,38 +156,5 @@
         })
     </script>
 
-
-    <script>
-        const
-            leftVid = document.getElementById('prLeftVid'),
-            rightVid = document.getElementById('prRightVid')
-
-        navigator.mediaDevices.getUserMedia({video: {facingMode: { exact: "environment" }}}).then((stream) => {
-            leftVid.srcObject = stream
-            rightVid.srcObject = stream
-        }).catch((err) => {
-            console.error(err)
-        })
-
-
-        // if (!navigator.mediaDevices?.enumerateDevices) {
-        //         console.log("enumerateDevices() not supported.");
-        //     } else {
-        //         // List cameras and microphones.
-        //         navigator.mediaDevices
-        //             .enumerateDevices()
-        //             .then((devices) => {
-        //                 devices.forEach((device) => {
-        //                     const p = document.createElement('p')
-        //                     p.innerText = `${device.kind} - ${device.label}`
-        //                     listOfDevices.appendChild(p)
-        //                     console.log(`${device.kind}: ${device.label} id = ${device.deviceId}`);
-        //                 });
-        //             })
-        //             .catch((err) => {
-        //                 console.error(`${err.name}: ${err.message}`);
-        //             });
-        //     }
-    </script>
 </body>
 </html>
