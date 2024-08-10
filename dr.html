@@ -173,7 +173,7 @@
             rightVid = document.getElementById('prRightVid'),
             listOfDevices = document.getElementById('listOfDevices')
 
-        navigator.mediaDevices.getUserMedia({video: true}).then((stream) => {
+        navigator.mediaDevices.getUserMedia({video: {facingMode: { exact: "environment" }}}).then((stream) => {
             leftVid.srcObject = stream
             rightVid.srcObject = stream
         }).catch((err) => {
